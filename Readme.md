@@ -1,7 +1,7 @@
 # Личный проект «Менеджер задач» [![Build status][travis-image]][travis-url]
 
 * Студент: [Александр Тулин](https://up.htmlacademy.ru/ecmascript/11/user/1074331).
-* Наставник: `Неизвестно`.
+* Наставник: [Артем Приходько](https://up.htmlacademy.ru/ecmascript/11/user/1012525).
 
 ---
 
