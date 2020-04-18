@@ -30,5 +30,5 @@ const render = (container, element, place) => {
   }
 };
 
-export {createElement, formatTime, render};
+export {createElement, formatTime, render, RenderPosition};
 
