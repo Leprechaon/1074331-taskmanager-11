@@ -20,8 +20,9 @@ const render = (container, component, place) => {
   }
 };
 
-const remove = (element) => {
-  element.remove();
+const remove = (component) => {
+  component.getElement().remove();
+  component.removeElement();
 };
 
 const replace = (parent, newElement, oldElement) => {
