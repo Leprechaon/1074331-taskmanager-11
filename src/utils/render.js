@@ -11,11 +11,11 @@ const createElement = (template) => {
 };
 
 
-const render = (container, element, place) => {
+const render = (container, component, place) => {
   switch (place) {
-    case RenderPosition.AFTERBEGIN: container.prepand(element);
+    case RenderPosition.AFTERBEGIN: container.prepand(component.getElement());
       break;
-    case RenderPosition.BEFOREEND: container.append(element);
+    case RenderPosition.BEFOREEND: container.append(component.getElement());
       break;
   }
 };
