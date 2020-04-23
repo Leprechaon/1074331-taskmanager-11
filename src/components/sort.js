@@ -15,4 +15,12 @@ export default class Sorting extends AbstractComponent {
   getTemplate() {
     return createSortingTemplate();
   }
+
+  getSortType() {
+
+  }
+
+  setSortTypeChangeHandler() {
+
+  }
 }
