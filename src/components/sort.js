@@ -31,11 +31,11 @@ export default class Sort extends AbstractComponent {
     return this._currentSortType;
   }
 
-  setSortTypeChangeHandler() {
+  setSortTypeChangeHandler(handler) {
     this.getElement().addEventListener(`click`, (evt) => {
       evt.preventDefault();
 
-      if (evt.target.tagName() !== `A`) {
+      if (evt.target.tagName !== `A`) {
         return;
       }
 
