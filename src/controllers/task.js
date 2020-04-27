@@ -5,6 +5,7 @@ import {render, replace, RenderPosition} from "../utils/render.js";
 export default class TaskController {
   constructor(container) {
     this._container = container;
+
     this._taskComponent = null;
     this._taskEditComponent = null;
 
@@ -20,14 +21,12 @@ export default class TaskController {
       document.addEventListener(`keydown`, this._onEscKeyDown);
     });
 
-
     this._taskEditComponent.setSubmitHandler((evt) => {
       evt.preventDefault();
       this._replaceEditToTask();
-      document.removeEventListener(`keydown`, this._onEscKeyDown);
     });
 
-    render(this.container, this._taskComponent, RenderPosition.BEFOREEND);
+    render(this._container, this._taskComponent, RenderPosition.BEFOREEND);
   }
 
   _replaceTaskToEdit() {
