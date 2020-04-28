@@ -3,12 +3,12 @@ import TaskEditComponent from "../components/task-edit.js";
 import {render, replace, RenderPosition} from "../utils/render.js";
 
 export default class TaskController {
-  constructor(container) {
+  constructor(container, onDataChange) {
     this._container = container;
 
     this._taskComponent = null;
     this._taskEditComponent = null;
-
+    this._onDataChange = onDataChange;
     this._onEscKeyDown = this._onEscKeyDown.bind(this);
   }
 
@@ -22,9 +22,15 @@ export default class TaskController {
     });
 
     this._taskComponent.setArchiveButtonClickHandler(()=> {
+      this._onDataChange(task, Object.assign({}, task, {
+        isArchive: !task.isArchive,
+      }));
     });
 
     this._taskComponent.setFavoritesButtonClickHandler(()=> {
+      this._onDataChange(task, Object.assign({}, task, {
+        isFavorite: !task.isFavorite,
+      }));
     });
 
     this._taskEditComponent.setSubmitHandler((evt) => {
